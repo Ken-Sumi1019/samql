@@ -7,5 +7,7 @@ import (
 )
 
 func Root(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, World!")
+	return c.Render(http.StatusOK, "root", map[string]interface{}{
+		"name": "Your Name",
+	})
 }

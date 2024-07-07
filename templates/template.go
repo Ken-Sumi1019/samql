@@ -1,4 +1,4 @@
-package main
+package templates
 
 import (
 	"html/template"
@@ -7,9 +7,9 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func templateInit() *Template {
+func Init() *Template {
 	t := &Template{
-		templates: template.Must(template.ParseGlob("public/views/*.html")),
+		templates: template.Must(template.ParseGlob("templates/**.html")),
 	}
 	return t
 }
